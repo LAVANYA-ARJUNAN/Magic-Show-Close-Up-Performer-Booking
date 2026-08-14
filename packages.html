@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Packages - MagicVerse</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class"
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <nav class="nav-container">
+
+      <a href="index.html" class="logo">
+        Magic<span>Verse</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="performers.html">
+          Performers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a
+          href="packages.html"
+          class="active"
+        >
+          Packages
+        </a>
+
+        <a href="booking.html">
+          Book Now
+        </a>
+
+      </div>
+
+      <div class="nav-buttons">
+
+        <button id="themeBtn" class="control-btn">
+          🌙
+        </button>
+
+        <button id="dirBtn" class="control-btn">
+          RTL
+        </button>
+
+        <button id="menuBtn" class="control-btn mobile-btn">
+          ☰
+        </button>
+
+      </div>
+
+    </nav>
+
+
+    <div id="mobileMenu" class="mobile-menu hidden">
+
+      <a href="index.html">Home</a>
+
+      <a href="performers.html">
+        Performers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="packages.html">
+        Packages
+      </a>
+
+      <a href="booking.html">
+        Book Now
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- PAGE HERO -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <p class="section-kicker">
+        SIMPLE PACKAGES
+      </p>
+
+      <h1>
+        Choose Your Magic
+      </h1>
+
+      <p>
+        Flexible packages for birthdays,
+        weddings, corporate events and more.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="pricing-grid">
+
+
+        <!-- PACKAGE 1 -->
+
+        <div class="price-card">
+
+          <div class="package-icon">
+            🃏
+          </div>
+
+          <h3>
+            Close-Up
+          </h3>
+
+          <div class="price">
+            ₹7,500
+          </div>
+
+          <p>
+            Up to 2 hours
+          </p>
+
+          <ul>
+
+            <li>
+              ✓ Walk-around magic
+            </li>
+
+            <li>
+              ✓ 1 Performer
+            </li>
+
+            <li>
+              ✓ Audience interaction
+            </li>
+
+            <li>
+              ✓ Card tricks
+            </li>
+
+          </ul>
+
+          <a
+            href="booking.html?package=Close-Up"
+            class="btn-primary"
+          >
+            Choose Package
+          </a>
+
+        </div>
+
+
+        <!-- PACKAGE 2 -->
+
+        <div class="price-card featured">
+
+          <span class="popular">
+            MOST POPULAR
+          </span>
+
+          <div class="package-icon">
+            🎩
+          </div>
+
+          <h3>
+            Premium Show
+          </h3>
+
+          <div class="price">
+            ₹15,000
+          </div>
+
+          <p>
+            Up to 3 hours
+          </p>
+
+          <ul>
+
+            <li>
+              ✓ Stage + Close-up
+            </li>
+
+            <li>
+              ✓ 1–2 Performers
+            </li>
+
+            <li>
+              ✓ Custom show flow
+            </li>
+
+            <li>
+              ✓ Audience participation
+            </li>
+
+          </ul>
+
+          <a
+            href="booking.html?package=Premium"
+            class="btn-primary"
+          >
+            Choose Package
+          </a>
+
+        </div>
+
+
+        <!-- PACKAGE 3 -->
+
+        <div class="price-card">
+
+          <div class="package-icon">
+            ✨
+          </div>
+
+          <h3>
+            Grand Illusion
+          </h3>
+
+          <div class="price">
+            ₹30,000
+          </div>
+
+          <p>
+            Up to 4 hours
+          </p>
+
+          <ul>
+
+            <li>
+              ✓ Full stage show
+            </li>
+
+            <li>
+              ✓ 2+ Performers
+            </li>
+
+            <li>
+              ✓ Event consultation
+            </li>
+
+            <li>
+              ✓ Professional setup
+            </li>
+
+          </ul>
+
+          <a
+            href="booking.html?package=Grand"
+            class="btn-primary"
+          >
+            Choose Package
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta-section">
+
+    <div class="container cta-content">
+
+      <div>
+
+        <p class="section-kicker">
+          NEED HELP?
+        </p>
+
+        <h2>
+          Not Sure Which Package To Choose?
+        </h2>
+
+      </div>
+
+      <a href="booking.html" class="btn-secondary">
+        Contact Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <h2>
+      Magic<span>Verse</span>
+    </h2>
+
+    <p>
+      Magic shows made memorable.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="performers.html">Performers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Book Now</a>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 MagicVerse. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

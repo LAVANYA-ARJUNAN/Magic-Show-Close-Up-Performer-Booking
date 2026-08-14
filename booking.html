@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Book A Performer - MagicVerse</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class"
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <nav class="nav-container">
+
+      <a href="index.html" class="logo">
+        Magic<span>Verse</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="performers.html">
+          Performers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="packages.html">
+          Packages
+        </a>
+
+        <a
+          href="booking.html"
+          class="active"
+        >
+          Book Now
+        </a>
+
+      </div>
+
+      <div class="nav-buttons">
+
+        <button id="themeBtn" class="control-btn">
+          🌙
+        </button>
+
+        <button id="dirBtn" class="control-btn">
+          RTL
+        </button>
+
+        <button id="menuBtn" class="control-btn mobile-btn">
+          ☰
+        </button>
+
+      </div>
+
+    </nav>
+
+
+    <div id="mobileMenu" class="mobile-menu hidden">
+
+      <a href="index.html">Home</a>
+
+      <a href="performers.html">
+        Performers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="packages.html">
+        Packages
+      </a>
+
+      <a href="booking.html">
+        Book Now
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- PAGE HERO -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <p class="section-kicker">
+        LET'S CREATE A MOMENT
+      </p>
+
+      <h1>
+        Book A Performer
+      </h1>
+
+      <p>
+        Tell us about your event and we'll
+        help make it magical.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BOOKING -->
+
+  <section class="section booking-section">
+
+    <div class="container booking-container">
+
+      <form
+        id="bookingForm"
+        class="booking-form"
+      >
+
+
+        <div class="form-group">
+
+          <label>
+            Full Name *
+          </label>
+
+          <input
+            id="name"
+            class="input"
+            type="text"
+            placeholder="Your Name"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Email *
+          </label>
+
+          <input
+            id="email"
+            class="input"
+            type="email"
+            placeholder="you@example.com"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Phone *
+          </label>
+
+          <input
+            id="phone"
+            class="input"
+            type="tel"
+            placeholder="+91 98765 43210"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            City *
+          </label>
+
+          <input
+            id="bookingCity"
+            class="input"
+            type="text"
+            placeholder="Chennai"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Event Date *
+          </label>
+
+          <input
+            id="date"
+            class="input"
+            type="date"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Event Time *
+          </label>
+
+          <input
+            id="time"
+            class="input"
+            type="time"
+          >
+
+          <small class="error"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Magic Type
+          </label>
+
+          <select
+            id="bookingType"
+            class="input"
+          >
+
+            <option value="Close-up">
+              Close-up
+            </option>
+
+            <option value="Stage">
+              Stage
+            </option>
+
+            <option value="Mentalism">
+              Mentalism
+            </option>
+
+            <option value="Illusion">
+              Illusion
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Number Of Guests
+          </label>
+
+          <input
+            id="guests"
+            class="input"
+            type="number"
+            min="1"
+            placeholder="50"
+          >
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Preferred Performer
+          </label>
+
+          <select
+            id="performerSelect"
+            class="input"
+          >
+
+            <option value="">
+              Any Available Performer
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Package
+          </label>
+
+          <select
+            id="packageSelect"
+            class="input"
+          >
+
+            <option value="">
+              Select Package
+            </option>
+
+            <option value="Close-Up">
+              Close-Up - ₹7,500
+            </option>
+
+            <option value="Premium">
+              Premium Show - ₹15,000
+            </option>
+
+            <option value="Grand">
+              Grand Illusion - ₹30,000
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Event Details
+          </label>
+
+          <textarea
+            id="details"
+            class="input textarea"
+            placeholder="Tell us about your event..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn-primary submit-btn"
+        >
+          Request Booking
+        </button>
+
+
+        <div
+          id="formMessage"
+          class="form-message hidden"
+        ></div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <h2>
+      Magic<span>Verse</span>
+    </h2>
+
+    <p>
+      Magic shows made memorable.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="performers.html">Performers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Book Now</a>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 MagicVerse. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

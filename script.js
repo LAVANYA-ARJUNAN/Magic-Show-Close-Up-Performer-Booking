@@ -69,269 +69,297 @@ const performers = [
 ];
 
 
-const $ = id =>
-  document.getElementById(id);
+/* THEME */
 
+const themeBtn =
+  document.getElementById("themeBtn");
 
-const grid =
-  $("performerGrid");
+if (themeBtn) {
 
-const cityFilter =
-  $("cityFilter");
+  themeBtn.addEventListener(
+    "click",
+    () => {
 
-const typeFilter =
-  $("typeFilter");
+      document.documentElement.classList.toggle(
+        "dark"
+      );
 
-const priceFilter =
-  $("priceFilter");
-
-const search =
-  $("search");
-
-const performerSelect =
-  $("performerSelect");
-
-
-
-const cities = [
-  ...new Set(
-    performers.map(
-      performer => performer.city
-    )
-  )
-];
-
-
-cities.sort();
-
-
-cities.forEach(city => {
-
-  cityFilter.innerHTML += `
-    <option value="${city}">
-      ${city}
-    </option>
-  `;
-
-});
-
-
-
-performers.forEach(
-  performer => {
-
-    performerSelect.innerHTML += `
-      <option value="${performer.id}">
-        ${performer.name} -
-        ${performer.city}
-      </option>
-    `;
-
-  }
-);
-
-
-
-function displayPerformers() {
-
-  const searchValue =
-    search.value
-      .toLowerCase()
-      .trim();
-
-
-  const city =
-    cityFilter.value;
-
-
-  const type =
-    typeFilter.value;
-
-
-  const maxPrice =
-    Number(priceFilter.value);
-
-
-  const filtered =
-    performers.filter(
-      performer => {
-
-        const matchesSearch =
-          !searchValue ||
-          `
-            ${performer.name}
-            ${performer.city}
-            ${performer.type}
-          `
-            .toLowerCase()
-            .includes(searchValue);
-
-
-        const matchesCity =
-          !city ||
-          performer.city === city;
-
-
-        const matchesType =
-          !type ||
-          performer.type === type;
-
-
-        const matchesPrice =
-          !maxPrice ||
-          performer.price <= maxPrice;
-
-
-        return (
-          matchesSearch &&
-          matchesCity &&
-          matchesType &&
-          matchesPrice
+      const isDark =
+        document.documentElement.classList.contains(
+          "dark"
         );
 
-      }
-    );
+      themeBtn.textContent =
+        isDark ? "☀️" : "🌙";
+
+    }
+  );
+
+}
 
 
-  grid.innerHTML = "";
+/* RTL / LTR */
+
+const dirBtn =
+  document.getElementById("dirBtn");
+
+if (dirBtn) {
+
+  dirBtn.addEventListener(
+    "click",
+    () => {
+
+      const isRTL =
+        document.documentElement.dir !== "rtl";
+
+      document.documentElement.dir =
+        isRTL ? "rtl" : "ltr";
+
+      dirBtn.textContent =
+        isRTL ? "LTR" : "RTL";
+
+    }
+  );
+
+}
 
 
-  filtered.forEach(
-    performer => {
+/* MOBILE MENU */
 
-      grid.innerHTML += `
+const menuBtn =
+  document.getElementById("menuBtn");
 
-        <article
-          class="performer-card"
-        >
+const mobileMenu =
+  document.getElementById("mobileMenu");
 
-          <div class="avatar">
-            ${performer.emoji}
-          </div>
+if (menuBtn && mobileMenu) {
 
-          <div
-            class="performer-body"
-          >
+  menuBtn.addEventListener(
+    "click",
+    () => {
 
-            <div
-              class="performer-title"
-            >
+      mobileMenu.classList.toggle(
+        "hidden"
+      );
 
-              <h3>
-                ${performer.name}
-              </h3>
+    }
+  );
 
-              <span>
-                ⭐ ${performer.rating}
-              </span>
-
-            </div>
+}
 
 
-            <p class="performer-info">
+/* PERFORMER PAGE */
 
-              ${performer.city}
+const performerGrid =
+  document.getElementById("performerGrid");
 
-              ·
+if (performerGrid) {
 
-              ${performer.type}
+  const cityFilter =
+    document.getElementById("cityFilter");
 
-            </p>
+  const typeFilter =
+    document.getElementById("typeFilter");
+
+  const priceFilter =
+    document.getElementById("priceFilter");
+
+  const search =
+    document.getElementById("search");
+
+  const noResults =
+    document.getElementById("noResults");
+
+  const resetFilters =
+    document.getElementById("resetFilters");
 
 
-            <span class="pill">
-              ${performer.type}
-            </span>
+  /* CITY OPTIONS */
+
+  const cities = [
+    ...new Set(
+      performers.map(
+        performer => performer.city
+      )
+    )
+  ];
 
 
-            <p
-              class="performer-bio"
-            >
-              ${performer.bio}
-            </p>
+  cities.sort();
 
 
-            <div
-              class="performer-bottom"
-            >
+  cities.forEach(
+    city => {
 
-              <strong>
-                From ₹${performer.price.toLocaleString("en-IN")}
-              </strong>
-
-              <button
-                class="book-link"
-                onclick="choosePerformer(${performer.id})"
-              >
-                Book →
-              </button>
-
-            </div>
-
-          </div>
-
-        </article>
-
+      cityFilter.innerHTML += `
+        <option value="${city}">
+          ${city}
+        </option>
       `;
 
     }
   );
 
 
-  $("noResults")
-    .classList
-    .toggle(
+  /* DISPLAY */
+
+  function displayPerformers() {
+
+    const searchValue =
+      search.value
+        .toLowerCase()
+        .trim();
+
+    const city =
+      cityFilter.value;
+
+    const type =
+      typeFilter.value;
+
+    const maxPrice =
+      Number(priceFilter.value);
+
+
+    const filtered =
+      performers.filter(
+        performer => {
+
+          const matchesSearch =
+            !searchValue ||
+            `
+              ${performer.name}
+              ${performer.city}
+              ${performer.type}
+            `
+              .toLowerCase()
+              .includes(searchValue);
+
+
+          const matchesCity =
+            !city ||
+            performer.city === city;
+
+
+          const matchesType =
+            !type ||
+            performer.type === type;
+
+
+          const matchesPrice =
+            !maxPrice ||
+            performer.price <= maxPrice;
+
+
+          return (
+            matchesSearch &&
+            matchesCity &&
+            matchesType &&
+            matchesPrice
+          );
+
+        }
+      );
+
+
+    performerGrid.innerHTML = "";
+
+
+    filtered.forEach(
+      performer => {
+
+        performerGrid.innerHTML += `
+
+          <article class="performer-card">
+
+            <div class="avatar">
+              ${performer.emoji}
+            </div>
+
+            <div class="performer-body">
+
+              <div class="performer-title">
+
+                <h3>
+                  ${performer.name}
+                </h3>
+
+                <span>
+                  ⭐ ${performer.rating}
+                </span>
+
+              </div>
+
+              <p class="performer-info">
+                ${performer.city}
+                ·
+                ${performer.type}
+              </p>
+
+              <span class="pill">
+                ${performer.type}
+              </span>
+
+              <p class="performer-bio">
+                ${performer.bio}
+              </p>
+
+              <div class="performer-bottom">
+
+                <strong>
+                  From ₹${performer.price.toLocaleString("en-IN")}
+                </strong>
+
+                <a
+                  href="booking.html?performer=${performer.id}"
+                  class="book-link"
+                >
+                  Book →
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        `;
+
+      }
+    );
+
+
+    noResults.classList.toggle(
       "hidden",
       filtered.length !== 0
     );
 
-}
+  }
 
 
+  /* EVENTS */
 
-function choosePerformer(id) {
+  search.addEventListener(
+    "input",
+    displayPerformers
+  );
 
-  performerSelect.value =
-    id;
+  cityFilter.addEventListener(
+    "change",
+    displayPerformers
+  );
 
+  typeFilter.addEventListener(
+    "change",
+    displayPerformers
+  );
 
-  $("booking")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-
-}
-
-
-window.choosePerformer =
-  choosePerformer;
-
-
-
-search.addEventListener(
-  "input",
-  displayPerformers
-);
-
-cityFilter.addEventListener(
-  "change",
-  displayPerformers
-);
-
-typeFilter.addEventListener(
-  "change",
-  displayPerformers
-);
-
-priceFilter.addEventListener(
-  "change",
-  displayPerformers
-);
+  priceFilter.addEventListener(
+    "change",
+    displayPerformers
+  );
 
 
-
-$("resetFilters")
-  .addEventListener(
+  resetFilters.addEventListener(
     "click",
     () => {
 
@@ -349,114 +377,101 @@ $("resetFilters")
   );
 
 
+  displayPerformers();
 
-$("themeBtn")
-  .addEventListener(
-    "click",
-    () => {
-
-      document.documentElement
-        .classList
-        .toggle("dark");
+}
 
 
-      if (
-        document.documentElement
-          .classList
-          .contains("dark")
-      ) {
+/* BOOKING PAGE */
 
-        $("themeBtn")
-          .textContent = "☀️";
-
-      } else {
-
-        $("themeBtn")
-          .textContent = "🌙";
-
-      }
-
-    }
-  );
+const bookingForm =
+  document.getElementById("bookingForm");
 
 
+if (bookingForm) {
 
-$("dirBtn")
-  .addEventListener(
-    "click",
-    () => {
-
-      const rtl =
-        document.documentElement.dir !==
-        "rtl";
-
-
-      document.documentElement.dir =
-        rtl
-          ? "rtl"
-          : "ltr";
-
-
-      $("dirBtn")
-        .textContent =
-        rtl
-          ? "LTR"
-          : "RTL";
-
-    }
-  );
-
-
-
-$("menuBtn")
-  .addEventListener(
-    "click",
-    () => {
-
-      $("mobileMenu")
-        .classList
-        .toggle("hidden");
-
-    }
-  );
-
-
-document
-  .querySelectorAll(
-    "#mobileMenu a"
-  )
-  .forEach(link => {
-
-    link.addEventListener(
-      "click",
-      () => {
-
-        $("mobileMenu")
-          .classList
-          .add("hidden");
-
-      }
+  const performerSelect =
+    document.getElementById(
+      "performerSelect"
     );
 
-  });
+
+  /* PERFORMER OPTIONS */
+
+  performers.forEach(
+    performer => {
+
+      performerSelect.innerHTML += `
+
+        <option value="${performer.id}">
+          ${performer.name} - ${performer.city}
+        </option>
+
+      `;
+
+    }
+  );
 
 
+  /* URL PERFORMER */
 
-const today =
-  new Date()
-    .toISOString()
-    .split("T")[0];
-
-
-$("date").min =
-  today;
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
 
 
+  const performerId =
+    params.get("performer");
 
-$("bookingForm")
-  .addEventListener(
+
+  if (performerId) {
+
+    performerSelect.value =
+      performerId;
+
+  }
+
+
+  /* URL PACKAGE */
+
+  const packageName =
+    params.get("package");
+
+  const packageSelect =
+    document.getElementById(
+      "packageSelect"
+    );
+
+
+  if (packageName && packageSelect) {
+
+    packageSelect.value =
+      packageName;
+
+  }
+
+
+  /* DATE */
+
+  const dateInput =
+    document.getElementById("date");
+
+
+  const today =
+    new Date()
+      .toISOString()
+      .split("T")[0];
+
+
+  dateInput.min = today;
+
+
+  /* FORM VALIDATION */
+
+  bookingForm.addEventListener(
     "submit",
-    function (event) {
+    function(event) {
 
       event.preventDefault();
 
@@ -501,26 +516,25 @@ $("bookingForm")
 
       document
         .querySelectorAll(".error")
-        .forEach(error => {
+        .forEach(
+          error => {
 
-          error.textContent = "";
+            error.textContent = "";
 
-        });
+          }
+        );
 
 
       fields.forEach(
         ([id, message]) => {
 
           const field =
-            $(id);
-
+            document.getElementById(id);
 
           const error =
             field
               .parentElement
-              .querySelector(
-                ".error"
-              );
+              .querySelector(".error");
 
 
           if (
@@ -554,15 +568,13 @@ $("bookingForm")
 
 
       if (
-        $("date").value &&
-        $("date").value < today
+        dateInput.value &&
+        dateInput.value < today
       ) {
 
-        $("date")
+        dateInput
           .parentElement
-          .querySelector(
-            ".error"
-          )
+          .querySelector(".error")
           .textContent =
           "Please select a future date.";
 
@@ -572,31 +584,26 @@ $("bookingForm")
 
 
       const messageBox =
-        $("formMessage");
+        document.getElementById(
+          "formMessage"
+        );
 
 
       if (valid) {
 
-        messageBox
-          .className =
+        messageBox.className =
           "form-message";
-
 
         messageBox.textContent =
           "🎉 Booking request received! We will contact you shortly.";
 
+        bookingForm.reset();
 
-        $("bookingForm")
-          .reset();
-
-
-        $("date").min =
-          today;
+        dateInput.min = today;
 
       } else {
 
-        messageBox
-          .className =
+        messageBox.className =
           "form-message hidden";
 
       }
@@ -604,6 +611,4 @@ $("bookingForm")
     }
   );
 
-
-
-displayPerformers();
+}

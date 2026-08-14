@@ -20,57 +20,34 @@
 
 <body>
 
-
+  <!-- NAVBAR -->
   <header class="navbar">
 
     <nav class="nav-container">
 
-      <a href="#home" class="logo">
+      <a href="index.html" class="logo">
         Magic<span>Verse</span>
       </a>
 
       <div class="nav-links">
-
-        <a href="#home">Home</a>
-
-        <a href="#performers">
-          Performers
-        </a>
-
-        <a href="#gallery">
-          Gallery
-        </a>
-
-        <a href="#pricing">
-          Packages
-        </a>
-
-        <a href="#booking">
-          Book Now
-        </a>
-
+        <a href="index.html" class="active">Home</a>
+        <a href="performers.html">Performers</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="packages.html">Packages</a>
+        <a href="booking.html">Book Now</a>
       </div>
 
       <div class="nav-buttons">
 
-        <button
-          id="themeBtn"
-          class="control-btn"
-        >
+        <button id="themeBtn" class="control-btn">
           🌙
         </button>
 
-        <button
-          id="dirBtn"
-          class="control-btn"
-        >
+        <button id="dirBtn" class="control-btn">
           RTL
         </button>
 
-        <button
-          id="menuBtn"
-          class="control-btn mobile-btn"
-        >
+        <button id="menuBtn" class="control-btn mobile-btn">
           ☰
         </button>
 
@@ -78,39 +55,21 @@
 
     </nav>
 
+    <div id="mobileMenu" class="mobile-menu hidden">
 
-    <div
-      id="mobileMenu"
-      class="mobile-menu hidden"
-    >
-
-      <a href="#home">
-        Home
-      </a>
-
-      <a href="#performers">
-        Performers
-      </a>
-
-      <a href="#gallery">
-        Gallery
-      </a>
-
-      <a href="#pricing">
-        Packages
-      </a>
-
-      <a href="#booking">
-        Book Now
-      </a>
+      <a href="index.html">Home</a>
+      <a href="performers.html">Performers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Book Now</a>
 
     </div>
 
   </header>
 
 
-
-  <section id="home" class="hero">
+  <!-- HERO -->
+  <section class="hero">
 
     <div class="hero-container">
 
@@ -133,17 +92,11 @@
 
         <div class="hero-buttons">
 
-          <a
-            href="#performers"
-            class="btn-primary"
-          >
+          <a href="performers.html" class="btn-primary">
             Find Performer
           </a>
 
-          <a
-            href="#booking"
-            class="btn-secondary"
-          >
+          <a href="booking.html" class="btn-secondary">
             Book Now
           </a>
 
@@ -210,639 +163,99 @@
   </section>
 
 
-
-  <section
-    id="performers"
-    class="section"
-  >
+  <!-- FEATURES -->
+  <section class="section">
 
     <div class="container">
 
-      <div class="section-header">
-
-        <div>
-
-          <p class="section-kicker">
-            OUR ARTISTS
-          </p>
-
-          <h2 class="section-title">
-            Find Your Perfect Performer
-          </h2>
-
-        </div>
-
-        <button
-          id="resetFilters"
-          class="reset-btn"
-        >
-          Reset Filters
-        </button>
-
-      </div>
-
-
-
-      <div class="filters">
-
-        <input
-          id="search"
-          class="input"
-          type="text"
-          placeholder="Search performer..."
-        >
-
-
-        <select
-          id="cityFilter"
-          class="input"
-        >
-
-          <option value="">
-            All Cities
-          </option>
-
-        </select>
-
-
-        <select
-          id="typeFilter"
-          class="input"
-        >
-
-          <option value="">
-            All Magic Types
-          </option>
-
-          <option value="Close-up">
-            Close-up
-          </option>
-
-          <option value="Stage">
-            Stage
-          </option>
-
-          <option value="Mentalism">
-            Mentalism
-          </option>
-
-          <option value="Illusion">
-            Illusion
-          </option>
-
-        </select>
-
-
-        <select
-          id="priceFilter"
-          class="input"
-        >
-
-          <option value="">
-            Any Price
-          </option>
-
-          <option value="10000">
-            Under ₹10,000
-          </option>
-
-          <option value="20000">
-            Under ₹20,000
-          </option>
-
-          <option value="30000">
-            Under ₹30,000
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div
-        id="performerGrid"
-        class="performer-grid"
-      ></div>
-
-
-      <p
-        id="noResults"
-        class="no-results hidden"
-      >
-        No performers found.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <section
-    id="gallery"
-    class="section gallery-section"
-  >
-
-    <div class="container">
-
-      <p class="section-kicker">
-        SEE THE MAGIC
-      </p>
-
-      <h2 class="section-title">
-        Performance Gallery
-      </h2>
-
-
-      <div class="gallery-grid">
-
-
-
-        <div class="gallery-card">
-
-          <img
-            src="https://draftsim.com/wp-content/uploads/2022/04/Mr-Foxglove-Illustration-by-Anna-Podedworna-1024x738.jpg"
-            alt="Magic Cards"
-          >
-
-          <div class="gallery-overlay">
-
-            <span>
-              🃏
-            </span>
-
-            <h3>
-              Magic Cards
-            </h3>
-
-          </div>
-
-        </div>
-
-
-        <!-- IMAGE 2 -->
-
-        <div class="gallery-card">
-
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6pUP3NBOwkfwq9ceZfHgGxHpZXSKiFU0_Uwavf3k_w&s=10"
-            alt="Magic Performance"
-          >
-
-          <div class="gallery-overlay">
-
-            <span>
-              🎩
-            </span>
-
-            <h3>
-              Live Magic
-            </h3>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="gallery-card">
-
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2NkrcsCVOtGOOT0p9qwTrM8ZR8E_X6p1ezCvicVB3ng&s=10"
-            alt="Card Performance"
-          >
-
-          <div class="gallery-overlay">
-
-            <span>
-              ✨
-            </span>
-
-            <h3>
-              Card Performance
-            </h3>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="video-box">
-
-        <iframe
-          src="https://www.youtube.com/embed/oW63DYxohuQ"
-          title="Magic Performance"
-          allowfullscreen>
-        </iframe>
-
-        <h3>
-          Watch A Live Performance
-        </h3>
-
-        <p>
-          Experience the magic before booking your performer.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRICING -->
-
-  <section
-    id="pricing"
-    class="section"
-  >
-
-    <div class="container">
-
-      <p class="section-kicker">
-        SIMPLE PACKAGES
-      </p>
-
-      <h2 class="section-title">
-        Choose Your Magic
-      </h2>
-
-
-      <div class="pricing-grid">
-
-
-        <div class="price-card">
-
-          <h3>
-            Close-Up
-          </h3>
-
-          <div class="price">
-            ₹7,500
-          </div>
-
-          <p>
-            Up to 2 hours
-          </p>
-
-          <ul>
-
-            <li>
-              ✓ Walk-around magic
-            </li>
-
-            <li>
-              ✓ 1 Performer
-            </li>
-
-            <li>
-              ✓ Audience interaction
-            </li>
-
-          </ul>
-
-          <a
-            href="#booking"
-            class="btn-primary"
-          >
-            Choose Package
-          </a>
-
-        </div>
-
-
-        <div class="price-card featured">
-
-          <span class="popular">
-            MOST POPULAR
-          </span>
-
-          <h3>
-            Premium Show
-          </h3>
-
-          <div class="price">
-            ₹15,000
-          </div>
-
-          <p>
-            Up to 3 hours
-          </p>
-
-          <ul>
-
-            <li>
-              ✓ Stage + Close-up
-            </li>
-
-            <li>
-              ✓ 1–2 Performers
-            </li>
-
-            <li>
-              ✓ Custom show flow
-            </li>
-
-          </ul>
-
-          <a
-            href="#booking"
-            class="btn-primary"
-          >
-            Choose Package
-          </a>
-
-        </div>
-
-
-        <div class="price-card">
-
-          <h3>
-            Grand Illusion
-          </h3>
-
-          <div class="price">
-            ₹30,000
-          </div>
-
-          <p>
-            Up to 4 hours
-          </p>
-
-          <ul>
-
-            <li>
-              ✓ Full stage show
-            </li>
-
-            <li>
-              ✓ 2+ Performers
-            </li>
-
-            <li>
-              ✓ Event consultation
-            </li>
-
-          </ul>
-
-          <a
-            href="#booking"
-            class="btn-primary"
-          >
-            Choose Package
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- BOOKING -->
-
-  <section
-    id="booking"
-    class="section booking-section"
-  >
-
-    <div class="container booking-container">
-
-      <div class="booking-heading">
+      <div class="center-heading">
 
         <p class="section-kicker">
-          LET'S CREATE A MOMENT
+          WHY MAGICVERSE
         </p>
 
         <h2 class="section-title">
-          Book A Performer
+          Everything For A Magical Event
         </h2>
 
       </div>
 
 
-      <form
-        id="bookingForm"
-        class="booking-form"
-      >
+      <div class="feature-grid">
 
-
-        <div class="form-group">
-
-          <label>
-            Full Name *
-          </label>
-
-          <input
-            id="name"
-            class="input"
-            type="text"
-            placeholder="Your Name"
-          >
-
-          <small class="error"></small>
-
+        <div class="feature-card">
+          <div class="feature-icon">🎩</div>
+          <h3>Professional Performers</h3>
+          <p>
+            Discover talented and experienced
+            magicians for every type of event.
+          </p>
         </div>
 
 
-        <div class="form-group">
-
-          <label>
-            Email *
-          </label>
-
-          <input
-            id="email"
-            class="input"
-            type="email"
-            placeholder="you@example.com"
-          >
-
-          <small class="error"></small>
-
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Multiple Cities</h3>
+          <p>
+            Find performers based on your
+            city and event location.
+          </p>
         </div>
 
 
-        <div class="form-group">
-
-          <label>
-            Phone *
-          </label>
-
-          <input
-            id="phone"
-            class="input"
-            type="tel"
-            placeholder="+91 98765 43210"
-          >
-
-          <small class="error"></small>
-
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Flexible Packages</h3>
+          <p>
+            Choose a package that matches
+            your event and budget.
+          </p>
         </div>
 
 
-        <div class="form-group">
-
-          <label>
-            City *
-          </label>
-
-          <input
-            id="bookingCity"
-            class="input"
-            type="text"
-            placeholder="Chennai"
-          >
-
-          <small class="error"></small>
-
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Highly Rated</h3>
+          <p>
+            Book performers with excellent
+            ratings and customer experiences.
+          </p>
         </div>
 
-
-        <div class="form-group">
-
-          <label>
-            Event Date *
-          </label>
-
-          <input
-            id="date"
-            class="input"
-            type="date"
-          >
-
-          <small class="error"></small>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Event Time *
-          </label>
-
-          <input
-            id="time"
-            class="input"
-            type="time"
-          >
-
-          <small class="error"></small>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Magic Type
-          </label>
-
-          <select
-            id="bookingType"
-            class="input"
-          >
-
-            <option>
-              Close-up
-            </option>
-
-            <option>
-              Stage
-            </option>
-
-            <option>
-              Mentalism
-            </option>
-
-            <option>
-              Illusion
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Number Of Guests
-          </label>
-
-          <input
-            id="guests"
-            class="input"
-            type="number"
-            min="1"
-            placeholder="50"
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            Preferred Performer
-          </label>
-
-          <select
-            id="performerSelect"
-            class="input"
-          >
-
-            <option value="">
-              Any Available Performer
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            Event Details
-          </label>
-
-          <textarea
-            id="details"
-            class="input textarea"
-            placeholder="Tell us about your event..."
-          ></textarea>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="btn-primary submit-btn"
-        >
-          Request Booking
-        </button>
-
-
-        <div
-          id="formMessage"
-          class="form-message hidden"
-        ></div>
-
-      </form>
+      </div>
 
     </div>
 
   </section>
 
 
+  <!-- CTA -->
+  <section class="cta-section">
 
+    <div class="container cta-content">
+
+      <div>
+
+        <p class="section-kicker">
+          READY TO CREATE MEMORIES?
+        </p>
+
+        <h2>
+          Bring Magic To Your Next Event
+        </h2>
+
+      </div>
+
+      <a href="booking.html" class="btn-primary">
+        Book A Performer
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
   <footer class="footer">
 
     <h2>
@@ -852,6 +265,16 @@
     <p>
       Magic shows made memorable.
     </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="performers.html">Performers</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Book Now</a>
+
+    </div>
 
     <p class="copyright">
       © 2026 MagicVerse. All Rights Reserved.
